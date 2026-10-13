@@ -1,1 +1,11 @@
+name: Workflow Inattivo
 
+# Non inseriamo l'evento 'on: push', quindi non partirà mai al push
+on:
+  workflow_dispatch: # Permette solo l'avvio manuale (se mai vorrai testarlo)
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Questo workflow non parte da solo"
