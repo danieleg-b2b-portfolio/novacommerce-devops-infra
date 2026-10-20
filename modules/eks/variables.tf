@@ -1,31 +1,31 @@
 variable "cluster_name" {
   type        = string
-  description = "Name of the EKS cluster"
+  description = "Nome del cluster EKS"
 }
 
 variable "cluster_version" {
   type        = string
-  description = "Kubernetes version"
+  description = "Versione di Kubernetes"
   default     = "1.30"
 }
 
 variable "vpc_id" {
   type        = string
-  description = "VPC ID where EKS will be deployed"
+  description = "ID della VPC in cui creare il cluster"
 }
 
 variable "private_subnet_ids" {
   type        = list(string)
-  description = "List of private subnet IDs for worker nodes"
+  description = "Lista degli ID delle subnet private per i nodi e il control plane"
 }
 
 variable "environment" {
   type        = string
-  description = "Environment stage (dev, prod, dr)"
+  description = "Ambiente di riferimento (es. dev, prod)"
 }
 
 variable "tags" {
   type        = map(string)
   default     = {}
-  description = "Common resource tags"
+  description = "Tag comuni per le risorse"
 }

@@ -1,19 +1,19 @@
 output "cluster_name" {
   value       = module.eks.cluster_name
-  description = "The name of the EKS cluster"
+  description = "Nome del cluster EKS"
 }
 
 output "cluster_endpoint" {
   value       = module.eks.cluster_endpoint
-  description = "Endpoint for EKS control plane"
+  description = "Endpoint API del cluster EKS"
+}
+
+output "cluster_oidc_provider_arn" {
+  value       = module.eks.oidc_provider_arn
+  description = "ARN del provider OIDC del cluster (fondamentale per IRSA)"
 }
 
 output "cluster_certificate_authority_data" {
   value       = module.eks.cluster_certificate_authority_data
-  description = "Base64 encoded certificate data required to communicate with the cluster"
-}
-
-output "oidc_provider_arn" {
-  value       = module.eks.oidc_provider_arn
-  description = "The ARN of the OIDC Provider for IRSA"
+  description = "Certificato CA del cluster per la configurazione di kubectl"
 }
