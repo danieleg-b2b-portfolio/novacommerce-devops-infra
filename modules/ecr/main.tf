@@ -1,7 +1,7 @@
 resource "aws_ecr_repository" "repos" {
   for_each = toset(var.repositories)
 
-  name                 = "novacommerce-/${each.value}"
+  name                 = "novacommerce-${each.value}"
   image_tag_mutability = "MUTABLE"
 
   # Sicurezza: Scansione CVE automatica ad ogni push dell'immagine Docker
